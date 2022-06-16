@@ -1,11 +1,13 @@
 import React from 'react'
-import {View, Text, Button,StyleSheet} from 'react-native';
+import {View, Text, Button,StyleSheet, Platform} from 'react-native';
 import { CATEGORIES } from '../data/dummy-data';
+import Colors from '../constants/Colors';
+
 
 const CategoriesMealsScreen = props=>{
           
 const catId = props.navigation.getParam('categoryId')
-// console.log(catId)
+//  console.log(catId)
 const selectedCategory = CATEGORIES.find(cat => cat.id === catId)
 // console.log(selectedCategory, CATEGORIES)   
 return(
@@ -19,6 +21,20 @@ return(
     )
 };
 
+CategoriesMealsScreen.navigationOptions =(navigationData)=>{
+    //  console.log(navigationData)
+ const catId = navigationData.navigation.getParam('categoryId');
+// console.log(`In navigation Options ${catId}`)
+const selectedCategory = CATEGORIES.find(cat =>cat.id ===catId)
+return{
+    headerTitle: selectedCategory.title ,
+    headerStyle:{
+        backgroundColor: Platform.OS ==='android'? Colors.primaryColor :'',
+    },
+    headerTintColor: Platform.OS=== 'android'? 'white' :Colors.primaryColor
+}
+
+}
 
 const styles = StyleSheet.create({
     screen:{

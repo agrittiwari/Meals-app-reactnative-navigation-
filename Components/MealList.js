@@ -19,7 +19,7 @@ const MealList =props =>{
     return(
     
     <View style={styles.screen}>
-    <Text> The Categories Meals Screen</Text>
+   
 <FlatList data={props.listData} keyExtractor={(item, index)=> item.id} renderItem={renderMealItem} style={{width:'100%'}}/>
     {/* <Button title="Go to Meal Detail" onPress={()=>{
         props.navigation.navigate({routeName:'MealDetail'})}} /> */}

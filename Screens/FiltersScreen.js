@@ -10,9 +10,9 @@ const FiltersScreen = props=>{
     )
 };
 
-FiltersScreen.navigationOptions({
+FiltersScreen.navigationOptions={
     headerTitle: 'Filter Meals'
-})
+}
 
 const styles = StyleSheet.create({
     screen:{

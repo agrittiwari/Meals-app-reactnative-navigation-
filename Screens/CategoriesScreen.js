@@ -5,10 +5,10 @@ import { CATEGORIES } from '../data/dummy-data';
 
 import CategoryGridTile from '../Components/CategoryGridTile';
 
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import HeaderButton from '../Components/HeaderButton';
 const CategoriesScreen = props=>{
 // console.log(props)
-
-
 
 const renderGridItem= (itemData)=>{
     return(
@@ -41,6 +41,9 @@ const renderGridItem= (itemData)=>{
 
 CategoriesScreen.navigationOptions={
     headerTitle: 'Meal Categories',
+    headerLeft:()=> (<HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item title="Menu" iconName='ios-menu' onPress={()=>{}}/>
+    </HeaderButtons>)
     
 }
 

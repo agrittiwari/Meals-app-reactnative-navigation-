@@ -80,8 +80,8 @@ const FiltersNavigator = createStackNavigator({
 })
 
 const MainNavigator = createDrawerNavigator({
-   MealsFavS:MealsFavTabNavigator,
+   MealsFav: MealsFavTabNavigator,
    Filters: FiltersNavigator
 })
 
-export default createAppContainer( MainNavigator)
+export default createAppContainer( MainNavigator )

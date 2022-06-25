@@ -39,11 +39,16 @@ const renderGridItem= (itemData)=>{
 };
 
 
-CategoriesScreen.navigationOptions={
-    headerTitle: 'Meal Categories',
+CategoriesScreen.navigationOptions=navData =>{
+    return{
+        headerTitle: 'Meal Categories',
     headerLeft:()=> (<HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item title="Menu" iconName='ios-menu' onPress={()=>{}}/>
+        <Item title="Menu" iconName='ios-menu' onPress={()=>{
+            navData.navigation.toggleDrawer();
+        }}/>
     </HeaderButtons>)
+    }
+    
     
 }
 

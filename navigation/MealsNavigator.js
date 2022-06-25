@@ -10,7 +10,9 @@ import Colors from '../constants/Colors'
 import FavouritesScreen from '../Screens/FavouritesScreen'
 import {Ionicons} from '@expo/vector-icons'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-import FavouritessScreen from '../Screens/FavouritesScreen';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+
+import FiltersScreen from '../Screens/FiltersScreen'
 
 const defaultStackNavOptions= {
    headerStyle:{ 
@@ -71,6 +73,15 @@ const MealsFavTabNavigator = Platform.OS === 'android' ?createMaterialBottomTabN
       activeTintColor:Colors.accentColor,
       
    }
+})
+
+const FiltersNavigator = createStackNavigator({
+   screen: FiltersScreen
+})
+
+const MainNavigator = createDrawerNavigator({
+   MealsFavS:MealsFavTabNavigator,
+   Filters: FiltersNavigator
 })
 
 export default createAppContainer( MealsFavTabNavigator)

@@ -18,6 +18,7 @@ const defaultStackNavOptions= {
    headerStyle:{ 
       backgroundColor: Platform.OS ==='android'? Colors.primaryColor :'',
   },
+
   headerTintColor: Platform.OS=== 'android'? 'white' :Colors.primaryColor
 }
 
@@ -57,7 +58,8 @@ const tabScreenConfig ={
       tabBarIcon:(tabInfo)=>{
          return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor}/>
       },
-      tabBarColor:Colors.accentColor
+      tabBarColor:Colors.accentColor,
+      
    }}
 }
 const MealsFavTabNavigator = Platform.OS === 'android' ?createMaterialBottomTabNavigator(tabScreenConfig,{
